@@ -95,6 +95,44 @@ Public Class FrmMasterBarang
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Sub cariNamaBarang()
+        Try
+            Call Koneksi()
+            cmd = New SqlCommand("select * from tbBarang Where NamaBarang like '%" & txtCari.Text & "%'", conn)
+            dr = cmd.ExecuteReader
+            dr.Read()
+            If dr.HasRows Then
+                Call Koneksi()
+                da = New SqlDataAdapter("select * from tbBarang where NamaBarang like '%" & txtCari.Text & "%'", conn)
+                ds = New DataSet
+                da.Fill(ds, "hasil")
+                dtBarang.DataSource = ds.Tables("hasil")
+                dtBarang.ReadOnly = True
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Sub cariStok()
+        Try
+            Call Koneksi()
+            cmd = New SqlCommand("select * from tbBarang Where StockBarang like '%" & txtCari.Text & "%'", conn)
+            dr = cmd.ExecuteReader
+            dr.Read()
+            If dr.HasRows Then
+                Call Koneksi()
+                da = New SqlDataAdapter("select * from tbBarang where StockBarang like '%" & txtCari.Text & "%'", conn)
+                ds = New DataSet
+                da.Fill(ds, "hasil")
+                dtBarang.DataSource = ds.Tables("hasil")
+                dtBarang.ReadOnly = True
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 #End Region
 
     Private Sub FrmMasterBarang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -122,5 +160,19 @@ Public Class FrmMasterBarang
 
     Private Sub ReadData(sender As Object, e As EventArgs) Handles dtBarang.Click
         Call BacaData()
+    End Sub
+
+    Private Sub txtCari_TextChanged(sender As Object, e As EventArgs) Handles txtCari.TextChanged
+        Try
+            If cbCari.Text = "Nama Barang" Then
+                cariNamaBarang()
+            ElseIf cbCari.Text = "Stok Barang" Then
+                cariStok()
+            Else
+                MsgBox("Data yang dapat dipilih hanya 2 kategori", vbCritical, "Pesan")
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

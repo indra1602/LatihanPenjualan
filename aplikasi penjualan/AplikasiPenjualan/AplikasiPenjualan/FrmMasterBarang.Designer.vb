@@ -23,6 +23,7 @@ Partial Class FrmMasterBarang
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GrpDetil = New System.Windows.Forms.GroupBox()
+        Me.txtStock = New System.Windows.Forms.TextBox()
         Me.txtNama = New System.Windows.Forms.TextBox()
         Me.txtJual = New System.Windows.Forms.TextBox()
         Me.txtBeli = New System.Windows.Forms.TextBox()
@@ -36,11 +37,10 @@ Partial Class FrmMasterBarang
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnSimpan = New System.Windows.Forms.Button()
         Me.GrpData = New System.Windows.Forms.GroupBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cbCari = New System.Windows.Forms.ComboBox()
         Me.txtCari = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.dtBarang = New System.Windows.Forms.DataGridView()
-        Me.txtStock = New System.Windows.Forms.TextBox()
         Me.GrpDetil.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GrpData.SuspendLayout()
@@ -63,6 +63,13 @@ Partial Class FrmMasterBarang
         Me.GrpDetil.TabIndex = 0
         Me.GrpDetil.TabStop = False
         Me.GrpDetil.Text = "Detil Barang"
+        '
+        'txtStock
+        '
+        Me.txtStock.Location = New System.Drawing.Point(115, 98)
+        Me.txtStock.Name = "txtStock"
+        Me.txtStock.Size = New System.Drawing.Size(70, 20)
+        Me.txtStock.TabIndex = 10
         '
         'txtNama
         '
@@ -183,7 +190,7 @@ Partial Class FrmMasterBarang
         '
         'GrpData
         '
-        Me.GrpData.Controls.Add(Me.ComboBox1)
+        Me.GrpData.Controls.Add(Me.cbCari)
         Me.GrpData.Controls.Add(Me.txtCari)
         Me.GrpData.Controls.Add(Me.Label6)
         Me.GrpData.Controls.Add(Me.dtBarang)
@@ -194,13 +201,15 @@ Partial Class FrmMasterBarang
         Me.GrpData.TabStop = False
         Me.GrpData.Text = "Data Barang"
         '
-        'ComboBox1
+        'cbCari
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(307, 253)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 3
+        Me.cbCari.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbCari.FormattingEnabled = True
+        Me.cbCari.Items.AddRange(New Object() {"Nama Barang", "Stok Barang"})
+        Me.cbCari.Location = New System.Drawing.Point(307, 253)
+        Me.cbCari.Name = "cbCari"
+        Me.cbCari.Size = New System.Drawing.Size(121, 21)
+        Me.cbCari.TabIndex = 3
         '
         'txtCari
         '
@@ -228,13 +237,6 @@ Partial Class FrmMasterBarang
         Me.dtBarang.ReadOnly = True
         Me.dtBarang.Size = New System.Drawing.Size(422, 228)
         Me.dtBarang.TabIndex = 0
-        '
-        'txtStock
-        '
-        Me.txtStock.Location = New System.Drawing.Point(115, 98)
-        Me.txtStock.Name = "txtStock"
-        Me.txtStock.Size = New System.Drawing.Size(70, 20)
-        Me.txtStock.TabIndex = 10
         '
         'FrmMasterBarang
         '
@@ -273,7 +275,7 @@ Partial Class FrmMasterBarang
     Friend WithEvents btnEdit As Button
     Friend WithEvents btnSimpan As Button
     Friend WithEvents dtBarang As DataGridView
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cbCari As ComboBox
     Friend WithEvents txtCari As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents txtStock As TextBox
