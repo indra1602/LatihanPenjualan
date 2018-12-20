@@ -25,3 +25,4 @@ C:\Users\OnvifDriver\Desktop\Penjualan\aplikasi penjualan\AplikasiPenjualan\Apli
 C:\Users\OnvifDriver\Desktop\Penjualan\aplikasi penjualan\AplikasiPenjualan\AplikasiPenjualan\obj\Debug\AplikasiPenjualan.exe
 C:\Users\OnvifDriver\Desktop\Penjualan\aplikasi penjualan\AplikasiPenjualan\AplikasiPenjualan\obj\Debug\AplikasiPenjualan.xml
 C:\Users\OnvifDriver\Desktop\Penjualan\aplikasi penjualan\AplikasiPenjualan\AplikasiPenjualan\obj\Debug\AplikasiPenjualan.pdb
+C:\Users\OnvifDriver\Desktop\Penjualan\aplikasi penjualan\AplikasiPenjualan\AplikasiPenjualan\obj\Debug\AplikasiPenjualan.FormTransaksiJual.resources
